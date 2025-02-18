@@ -1,1 +1,1 @@
-print("Javascript")
+console.log("Javascript")
