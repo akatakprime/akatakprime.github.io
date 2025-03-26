@@ -1,12 +1,67 @@
- <!DOCTYPE html>
-<html>
-<body>
+<!DOCTYPE html>
+<html lang = "en" dir = "ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Maze of Madness</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<div id="main-body-grid" class="main-body-grid">
+			<div id="top-header" class="top-header">
+				<span>Maze of Madness</span>
+			</div>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-<button> A button </button>
+			<div class="output-container grid-item-3" id="goal-display">
+				<div class="title">Goal</div>
+				<div id="goal-container">
+					<div class="post">Save everyone and escape alive.</div>
+				</div>
+			</div>
 
-<script type="module" src="javafile.js"></script>
+			<div id = "maze_display" class = "maze-grid">
+			</div>
 
-</body>
+			<div class="output-container grid-item-1">
+				<div class="title">Messages</div>
+				<div id="messages-container" class="scroller"></div>
+			</div>
+
+			<div class="output-container grid-item-2">
+				<div class="title">Inventory</div>
+				<div id="inventory-container" class="scroller"></div>
+			</div>
+
+			<div style="display: none;" class="success-or-failure" id="final-box">
+				<div class="title"></div>
+				<div class="button-1 button" onclick="onRefresh()">New Game</div>
+				<div class="button-2 button" onclick="onView()">View Map</div>
+			</div>
+
+			<div style="display: none;" class="reload-button" onclick="reloadPageButton()" id="new-game-button">
+				<div class="text">New Game</div>
+			</div>
+			<div class="controls-button" id="controls-button" onclick="displayInfo(this)">
+				<div class="text">Information</div>
+			</div>
+			<div class="controls-screen" id="controls-screen">
+				<div class="title">Information</div>
+				<div class="exit-button" onclick="displayInfo(this)">X</div>
+				<div class="information">
+					<div>Controls:</div>
+					<div>W = up | A = left | S = down | D = right<br>To use an item, click on it or type in its number. For numbers with multiple digits, hold space and type in the number.</div>
+					<div>Monster:</div>
+					<div>Creature that will hunt and kill you. You can stun it with a knife.</div>
+					<div>Prisoner:</div>
+					<div>Man who needs to be rescued. He will follow you unless attacked by a monster.</div>
+					<div>Knife:</div>
+					<div>If the bearer and the monster collide at the end of the turn, it will stun the monster for 3 turns. Can be handed to a prisoner.</div>
+					<div>Torch:</div>
+					<div>Will light the space around the bearer for 20 turns. Can be handed to a prisoner. Can be accumulated.</div>
+					<div>Inventory:</div>
+					<div>You will begin each level with the items left over from the last successful level, so use your inventory strategically.</div>
+				</div>
+			</div>
+		</div>
+		<script src="javafile.js"></script>
+	</body>
 </html> 
